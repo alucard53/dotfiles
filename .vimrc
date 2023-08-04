@@ -1,3 +1,21 @@
+set nocompatible
+set mouse=a
+set number
+set relativenumber
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+set termguicolors
+filetype plugin indent on
+syntax on
+
+let mapleader = " "
+nnoremap <leader>pv :Ex<CR>
+
+call plug#begin()
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim'
 Plug 'gruvbox-community/gruvbox'
