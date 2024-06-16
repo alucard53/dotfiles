@@ -2,13 +2,20 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(set-frame-font "LiterationMono Nerd Font Mono 10" nil t)
+(set-frame-font "<font-name> <font-size>" nil t)
 
 (global-display-line-numbers-mode)
 (setq inhibit-startup-message t)
 (setq-default major-mode 'text-mode)
 (windmove-default-keybindings)
 (setq make-backup-files nil)
+(blink-cursor-mode -1)
+(pixel-scroll-mode 1)
+
+(setq viper-mode -1)
+(require 'viper)
+(keymap-global-set "M-p" 'viper-scroll-down)
+(keymap-global-set "M-n" 'viper-scroll-up)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -21,13 +28,11 @@
 (require 'smartparens-config)
 (smartparens-global-mode)
 
+(require 'move-text)
 (move-text-default-bindings)
 
-(add-hook 'rust-mode-hook #'tree-sitter-mode)
-(add-hook 'zig-mode-hook #'tree-sitter-mode)
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
-
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
