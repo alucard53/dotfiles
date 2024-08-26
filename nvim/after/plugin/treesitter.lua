@@ -35,12 +35,12 @@ require'nvim-treesitter.configs'.setup {
       -- * query_string: eg '@function.inner'
       -- * method: eg 'v' or 'o'
       -- and should return the mode ('v', 'V', or '<c-v>') or a table
-      -- mapping query_strings to modes.
-      selection_modes = {
-        ['@parameter.outer'] = 'v', -- charwise
-        ['@function.outer'] = 'V', -- linewise
-        ['@class.outer'] = '<c-v>', -- blockwise
-      },
+      -- -- mapping query_strings to modes.
+      -- selection_modes = {
+      --   ['@parameter.outer'] = 'v', -- charwise
+      --   ['@function.outer'] = 'V', -- linewise
+      --   ['@class.outer'] = '<c-v>', -- blockwise
+      -- },
       -- If you set this to `true` (default is `false`) then any textobject is
       -- extended to include preceding or succeeding whitespace. Succeeding
       -- whitespace has priority in order to act similarly to eg the built-in
