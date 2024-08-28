@@ -1,3 +1,6 @@
+-- !!Don't let lsp do syntax highlighting
+vim.highlight.priorities.semantic_tokens = 95
+
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
