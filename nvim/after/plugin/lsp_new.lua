@@ -1,5 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
+vim.highlight.priorities.semantic_tokens = 95
+
 -- lsp_attach is where you enable features that only work
 -- if there is a language server active in the file
 local lsp_attach = function(_, bufnr)
