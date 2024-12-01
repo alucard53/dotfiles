@@ -63,7 +63,10 @@ require("lazy").setup({
             'nvim-lualine/lualine.nvim',
             dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
         },
-        { 'Love-Pengy/lillilac.nvim' }
+
+        { 'tpope/vim-fugitive' },
+            
+        { 'blazkowolf/gruber-darker.nvim' }
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
