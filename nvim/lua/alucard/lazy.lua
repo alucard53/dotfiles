@@ -36,23 +36,19 @@ require("lazy").setup({
 
         { 'ThePrimeagen/harpoon' },
 
-        {
-            'VonHeikemen/lsp-zero.nvim',
-            dependencies = {
-                -- LSP Support
-                { 'neovim/nvim-lspconfig' }, -- Required
-                {                            -- Optional
-                    'williamboman/mason.nvim',
-                    run = function()
-                        pcall(vim.cmd, 'MasonUpdate')
-                    end,
-                },
-
-                { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-                -- Autocompletion
-            }
+        { 'neovim/nvim-lspconfig' }, -- Required
+        {                            -- Optional
+            'williamboman/mason.nvim',
+            run = function()
+                pcall(vim.cmd, 'MasonUpdate')
+            end,
         },
+
+        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+        { 'hrsh7th/nvim-cmp' },
+        { 'hrsh7th/cmp-nvim-lsp' },
+
+
 
         {
             'saghen/blink.cmp',
@@ -83,18 +79,24 @@ require("lazy").setup({
                     nerd_font_variant = 'mono'
                 },
 
+                completion = {
+                  documentation = { auto_show = true, auto_show_delay_ms = 100 }
+                },
+
+
                 -- Default list of enabled providers defined so that you can extend it
                 -- elsewhere in your config, without redefining it, due to `opts_extend`
                 sources = {
                     default = { 'lsp', 'path', 'snippets', 'buffer' },
+                    providers = {
+                      lsp = { priority = 4 },
+                      path = { priority = 3 },
+                      snippets = { priority = 2 },
+                      buffer = { priority = 1 } 
+                    },
                 },
             },
             opts_extend = { "sources.default" }
-        },
-
-        {
-            "windwp/nvim-autopairs",
-            config = function() require("nvim-autopairs").setup {} end
         },
 
         {
