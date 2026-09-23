@@ -17,9 +17,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>pa", "ggVG")
 
-vim.opt.cmdheight = 0
 vim.opt.signcolumn = "yes"
-vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
