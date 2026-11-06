@@ -115,9 +115,20 @@ require("lazy").setup({
       },
     },
 
+    { 'sbdchd/neoformat' },
     { 'tpope/vim-fugitive' },
 
-    { 'blazkowolf/gruber-darker.nvim' }
+    { 'blazkowolf/gruber-darker.nvim' },
+    { 'rezniqov/soviet.nvim' },
+    { 'alucard53/dev.nvim' },
+    {
+      'j-hui/fidget.nvim',
+      event = 'VeryLazy',
+      opts = {
+      },
+    },
+
+    { 'rluba/jai.vim' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

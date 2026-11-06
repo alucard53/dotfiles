@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'json', 'json', 'markdown' },
+  pattern = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'json', 'json', 'markdown', 'go', 'sql', 'c', 'cpp' },
   callback = function() vim.treesitter.start() end,
 })
 
@@ -8,7 +8,7 @@ require("nvim-treesitter-textobjects").setup {
     lookahead = true,
     selection_modes = {
       ['@parameter.outer'] = 'v', -- charwise
-      ['@function.outer'] = 'V', -- linewise
+      ['@function.outer'] = 'V',  -- linewise
     },
     include_surrounding_whitespace = false,
   },
